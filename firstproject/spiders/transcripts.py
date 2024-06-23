@@ -9,7 +9,7 @@ class TranscriptsSpider(CrawlSpider):
     start_urls = ["https://subslikescript.com/movies_letter-X"]
 
     custom_settings = {
-        "DOWNLOAD_DELAY": 0.5,  # 다운로드 지연을 0.5초로 설정합니다.
+        "DOWNLOAD_DELAY": 0.3,  # 다운로드 지연을 0.5초로 설정합니다.
     }
 
     rules = (
