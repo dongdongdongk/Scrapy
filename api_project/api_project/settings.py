@@ -1,4 +1,4 @@
-# Scrapy settings for firstproject project
+# Scrapy settings for api_project project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,18 +7,17 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "firstproject"
+BOT_NAME = "api_project"
 
-SPIDER_MODULES = ["firstproject.spiders"]
-NEWSPIDER_MODULE = "firstproject.spiders"
+SPIDER_MODULES = ["api_project.spiders"]
+NEWSPIDER_MODULE = "api_project.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "firstproject (+http://www.yourdomain.com)"
-# USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
+#USER_AGENT = "api_project (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = False
+ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -38,20 +37,21 @@ ROBOTSTXT_OBEY = False
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-# DEFAULT_REQUEST_HEADERS = {
-#    'USER_AGENT' : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36"
-# }
+#DEFAULT_REQUEST_HEADERS = {
+#    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+#    "Accept-Language": "en",
+#}
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "firstproject.middlewares.FirstprojectSpiderMiddleware": 543,
+#    "api_project.middlewares.ApiProjectSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "firstproject.middlewares.FirstprojectDownloaderMiddleware": 543,
+#    "api_project.middlewares.ApiProjectDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -62,12 +62,9 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-ITEM_PIPELINES = {
-   # "firstproject.pipelines.MongodbPipeline": 300,
-   "firstproject.pipelines.SQLLitePipeline": 300,
-   
-#    "firstproject.pipelines.NewFirstprojectPipeline": 200,
-}
+#ITEM_PIPELINES = {
+#    "api_project.pipelines.ApiProjectPipeline": 300,
+#}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

@@ -13,7 +13,7 @@ class TranscriptsSpider(CrawlSpider):
         yield scrapy.Request(url="https://subslikescript.com/movies_letter-X", headers={'user-agent':self.user_agent})
 
     custom_settings = {
-        "DOWNLOAD_DELAY": 0.3,  # 다운로드 지연을 0.5초로 설정합니다.
+        "DOWNLOAD_DELAY": 0.5,  # 다운로드 지연을 0.5초로 설정합니다.
     }
 
     rules = (
@@ -34,10 +34,11 @@ class TranscriptsSpider(CrawlSpider):
 
     def parse_item(self, response):
         article = response.xpath("//article[@class='main-article']")
+        transcript_list = article.xpath("./div[@class='full-script']/text()").getall()
+        transcript_string = ' '.join(transcript_list)
         yield {
             "title": article.xpath("./h1/text()").get(),
             "plot": article.xpath("./p/text()").get(),
-            # "transcript": article.xpath("./div[@class='full-script']/text()").getall(),
+            "transcript": transcript_string,
             "url": response.url,
-            'user-agent' : response.request.headers['User-Agent'],
         }
